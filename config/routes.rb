@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+  
   get 'users/new'
   root 'fixed_pages#home'
   match '/about',    to: 'fixed_pages#about',    via: 'get'
