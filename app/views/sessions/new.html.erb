@@ -1,0 +1,16 @@
+<h1>Sign-in</h1>
+
+<div class = "container">
+  <div class="row">
+
+    <%= bootstrap_form_tag url:'/sessions' do |f| %>
+    
+    <%= f.text_field :username, label: "Username" %>
+    
+    <%= f.password_field :password, label: "Password" %>
+    
+    <%= f.submit "Sign Up"%>
+    <% end %>
+
+  </div>
+</div>
