@@ -1,0 +1,28 @@
+
+
+
+<ul class="navbar-nav ml-auto">
+  <% if current_user == nil %>
+  <li class="nav-item">
+    <a class="nav-link" 
+       <%= link_to "Sign-in", signin_path %>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" 
+     <%= link_to "Sign-up", signup_path %>
+    </a>
+  </li>
+  <% else %>
+  <li class="nav-item">
+    <a class="nav-link active" 
+     <%= link_to current_user.username, root_url, method: "delete" %>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" 
+       <%= link_to "Sign-out", signout_path, method: "delete" %>
+    </a>
+  </li>
+  <% end %>
+</ul>
