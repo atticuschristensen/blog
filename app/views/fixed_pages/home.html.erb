@@ -1,6 +1,14 @@
-<!-- <h1>FixedPages#home</h1> -->
-<!-- <p>Find me in app/views/fixed_pages/home.html.erb</p> -->
-<h1> <%= current_user.username %></h1>
+
+
+<h1>FixedPages#home</h1>
+<p>Find me in app/views/fixed_pages/home.html.erb</p>
+<h1>
+  <% if current_user!=nil %>
+   <%= current_user.username %>
+  <% end %>
+</h1>
+
+
 <div class="center hero-unit">
   <h1>Welcome to the Sample App</h1>
 
