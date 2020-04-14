@@ -6,7 +6,7 @@ ruby '2.7.0'
 gem 'bootstrap'
 #gem 'bootstrap-sass', '3.4.1'
 gem 'sprockets'
-
+gem 'will_paginate', '3.3.0'
 
 gem "bootstrap_form"
 gem 'bcrypt-ruby'

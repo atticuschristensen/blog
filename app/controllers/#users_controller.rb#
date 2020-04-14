@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:id])
-    @articles = @user.articles.paginate(page: params[:page], per_page: 5)
+    @articles = User.articles
   end
 
   def create
