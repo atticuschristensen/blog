@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :users
+  resources :articles
   resources :sessions, only: [:new, :create, :destroy]
   
   get 'users/new'
+  get 'articles/new'
   root 'fixed_pages#home'
   
   match '/about',    to: 'fixed_pages#about',    via: 'get'
