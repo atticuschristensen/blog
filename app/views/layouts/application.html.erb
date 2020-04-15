@@ -17,11 +17,13 @@
 	<span class="navbar-brand"> Blog     </span>
 	 <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href=<%= root_url%> >Home</a>
             </li>
+	    <% if current_user!= nil%>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href=<%=new_article_path%>   %>New post</a>
             </li>
+	    <% end %>
           </ul>
 
 	 <%=render '/shared/sign_inout_button' %>
@@ -37,10 +39,12 @@
       <% end %>
             
     </header>
+    
     <div class="container">
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
+
+
 </html>
 

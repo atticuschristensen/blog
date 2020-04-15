@@ -1,7 +1,19 @@
 <div class="card mb-3">
   <div class="card-body">
+    <div class="top-right" style="float:right">
+      <% if article.updated_at!=article.created_at%>
+      <a class = "time"> 
+	Last edited: <%= article.updated_at.to_formatted_s(:short)%>;
+      </a>
+      <% end %>
+      <a class = "time">
+	 Posted: <%= article.created_at.to_formatted_s(:short)%>
+      </a>
+    </div>
+
+    
     <h5 class="card-title"><%= article.title %></h5>
     <p class = "card-text"> <%= article.body %> </p>
-    <a href=<%= root_url %> class="stretched-link">View post</a>
+    <a href=<%= article_path(article) %> class="stretched-link">View post</a>
   </div>
 </div>

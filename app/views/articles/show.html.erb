@@ -1,2 +1,26 @@
-<h1><%= @article.title  %></h1>
-<p> <%= @article.body  %></p>
+<div class="card-body">
+  <div class="float-right" style="float:right">
+    <% if @article.updated_at!=@article.created_at%>
+    <a class = "time"> 
+      Last edited: <%= @article.updated_at.to_formatted_s(:short)%>;
+    </a> 
+    <% end %>
+    <a class = "time">
+      Posted: <%= @article.created_at.to_formatted_s(:short)%>
+    </a>
+  </div><br>
+    <div class="float-right" style="float:right">
+    <a class="btn btn-outline-secondary" role = "button" 
+       <%= link_to "Edit", edit_article_path(@article) %>
+   </a>
+   <a class="btn btn-outline-secondary" role="button"
+      <%= link_to "Delete", signout_path, method: "delete", data: { confirm: "You sure?" }%>
+   </a>
+  </div>
+  
+  <h3 class="card-title"><%= @article.title %></h5>
+  <p class = "card-text"> <%= @article.body %> </p>
+</div>
+
+
+
