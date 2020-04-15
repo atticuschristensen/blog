@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
+  match '/:username', to:'users#show', via: 'get', as: 'by_username'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

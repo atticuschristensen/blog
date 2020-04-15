@@ -16,7 +16,7 @@
   <% else %>
   <li class="nav-item">
     <a class="nav-link active" 
-     <%= link_to current_user.username, root_url%>
+     <%= link_to current_user.username, by_username_path(current_user.username)%>
     </a>
   </li>
   <li class="nav-item">
