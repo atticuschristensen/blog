@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+
 gem 'bootstrap'
 #gem 'bootstrap-sass', '3.4.1'
 gem 'sprockets'
