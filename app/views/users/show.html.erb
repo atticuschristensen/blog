@@ -1,8 +1,9 @@
-<%= @user.username %>
 <div class="span8">
     <% if @user.articles.any? %>
     <h2 class = "p-3" >Blog posts by <%= @user.username%></h2>
     <%= render @articles %>
     <%= will_paginate @articles %>
+    <% else %>
+    <h2 class = "p-3" >No blog posts by <%= @user.username%></h2>
     <% end %>
 </div>
