@@ -1,23 +1,8 @@
 
 
-<h1>FixedPages#home</h1>
-<p>Find me in app/views/fixed_pages/home.html.erb</p>
-<h1>
-  <% if current_user!=nil %>
-   <%= current_user.username %>
-   <% end %>
+<div class=" hero-unit">
+  <h1 class>Welcome to Sample Blog</h1>
 
+  <p>There are <%=User.count%> users who have written <%=Article.count%> articles. <%= render '/shared/random_user'%></p>
 
-	 
-</h1>
-
-
-<div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
 </div>

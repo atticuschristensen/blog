@@ -1,0 +1,7 @@
+
+<% if User.count>0 %>
+  <% randuser = User.all.sample %>
+  Check out <%=randuser.username%>'s  
+  <%= link_to "blog", by_username_path(randuser.username) %>.
+<% end %>
+
