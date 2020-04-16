@@ -30,6 +30,13 @@ module SessionsHelper
     end
   end
 
+  def valid_user
+    @article = current_user.articles.find(params[:id])
+  rescue
+    redirect_to root_url
+  end
+  
+
   
 end
 

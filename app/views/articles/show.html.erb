@@ -9,15 +9,17 @@
       Posted: <%= @article.created_at.to_formatted_s(:short)%>
     </a>
   </div><br>
-    <div class="float-right" style="float:right">
+
+  <% if @article.user == current_user %>
+  <div class="float-right" style="float:right">
     <a class="btn btn-outline-secondary" role = "button" 
        <%= link_to "Edit", edit_article_path(@article) %>
    </a>
    <a class="btn btn-outline-secondary" role="button"
-      <%= link_to "Delete", signout_path, method: "delete", data: { confirm: "You sure?" }%>
+      <%= link_to "Delete", @article, method: :delete, data: { confirm: "Are you sure you want to delete the post?" }%>
    </a>
   </div>
-  
+  <% end %>
   <h3 class="card-title"><%= @article.title %></h5>
   <p class = "card-text"> <%= @article.body %> </p>
 </div>

@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :valid_user,   only: [:update, :destroy]
+  
   def create
     @article = current_user.articles.build(article_params)
     if @article.save
@@ -24,13 +26,19 @@ class ArticlesController < ApplicationController
 
 
  def update
-   @article = Article.find(params[:id])
    if @article.update_attributes(article_params)
      flash[:success] = "Article Updated"
      redirect_to @article
    else
      render 'edit'
    end
+ end
+
+
+ def destroy
+   @article.destroy
+   flash[:success] = "Article Deleted"
+   redirect_to by_username_path(current_user.username)
  end
  
  
