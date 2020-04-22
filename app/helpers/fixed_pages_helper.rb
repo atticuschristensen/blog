@@ -1,2 +1,1 @@
-module FixedPagesHelper
-end
+module FixedPagesHelper; end
